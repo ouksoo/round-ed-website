@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+<head>
+<title>ROUND-ED</title>
+<style>
+html, body {width:100%; height:100%; overflow:hidden;}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font: 13px Helvetica, Arial; }
+form { background: #000; padding: 3px; position: fixed; bottom: 0; width: 100%; }
+form input { border: 0; padding: 10px; width: 90%; margin-right: .5%; }
+dmaform button { width: 9%; background: border: none; padding: 10px; }
+#messages { list-style-type: none; margin: 0; padding: 0; }
+#messages li { padding: 5px 10px; }
+#messages li:nth-child(odd) { background: #eee; }
+.guide {position:absolute; top:0; right:0; width:200px; height:140px; padding:20px; color:#fff; background:#000; -webkit-box-shadow:0 0 12px #666;}
+canvas {display: block; outline: 0px; margin: 0px;width:100%; height:100%;}
+#content {margin: 50px auto 0px auto; padding: 25px 25px 15px 25px; width: 1024px; min-width: 300px; overflow: auto; border-left: 1px solid #444; border-top: 1px solid #444; border-right: 1px solid #333; border-bottom: 1px solid #333; background-color: #3d3d3d;}
+</style>
+<script src="/js/processing.js"></script>
+
+<script type="text/javascript">
+	// Accessing JavaScript from Processing 
+	function sendJSFromPS (msg) {
+		document.getElementById('msg').innerHTML = "fps: " + msg;
+	};
+	function getWindowSizeFromPS() 
+	{
+		if (!processingInstance) {
+			processingInstance = Processing.getInstanceById('processingID');
+		}
+		processingInstance.reSize(window.innerWidth, window.innerHeight);
+	}
+	// Accessing Processing from JavaScript
+	var processingInstance;
+	function sendPSFromJS() 
+	{
+		sendAccDataToProcessing(document.sendForm.ax.value, document.sendForm.ay.value);
+	}
+	function sendAccDataToProcessing(vx, vy)
+	{
+		if (!processingInstance) {
+			processingInstance = Processing.getInstanceById('processingID');
+		}
+
+		var ax = parseFloat(vx);
+		var ay = parseFloat(vy);
+		
+		processingInstance.setAccData(ax, ay);
+	}
+
+	function resize_canvas() 
+	{
+		if (!processingInstance) {
+			processingInstance = Processing.getInstanceById('processingID');
+		}
+		processingInstance.reSize(window.innerWidth, window.innerHeight);
+	}
+
+</script>
+</head>
+<body onresize="resize_canvas()">
+
+<div id="info" style="position:absolute; top:80px; left:10px; font-size:16px; color:#000"></div>
+
+<div class="guide">
+	<p><strong>MOBILE connect</strong><br /><em id="url" style="font-size:11px; color:#6ed1ff"></em></p>
+	<p style="padding-top:20px;"><strong>Mobile channel</strong><br /><em id="roomKey" style="font-size:30px; color:#ffb96e"></em></p>
+</div>
+
+<!--
+<ul id="messages"></ul>
+<form action="">
+  <input type="text" id="m" autocomplete="off" /><button>통신</button>
+</form>
+-->
+
+<div id="msg" style="position:absolute; z-index:-1"></div>
+
+<canvas id="processingID" data-processing-sources="/js/prototype4_2.pde">
+	<p>Your browser does not support the canvas tag.</p>
+</canvas>
+
+<script src="/socket.io/socket.io.js"></script>
+<script data-main="/js/main" src="/js/require.js"></script>
+
+</body>
+</html>

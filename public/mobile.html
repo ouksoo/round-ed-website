@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="kr">
+<head>
+<meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport" />
+<title>ROUND-ED</title>
+<style>
+html, body {width:100%; height:100%; overflow:hidden;}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font: 13px Helvetica, Arial; }
+form { background: #000; padding: 3px; position: fixed; bottom: 0; width: 100%; }
+form input { border: 0; padding: 10px; width: 90%; margin-right: .5%; }
+form button { width: 9%; background: border: none; padding: 10px; }
+#messages { list-style-type: none; margin: 0; padding: 0; }
+#messages li { padding: 5px 10px; }
+#messages li:nth-child(odd) { background: #eee; }
+.guide {position:absolute; left:45%; top:45%;}
+.cursor {position:absolute; left:150px; top:150px; width:50px; height:50px; -webkit-border-radius:50%; background:gray;}
+.chatroom {display:none;}
+.guide {position:absolute; width:200px; height:140px; padding:20px; left:50%; top:42%; margin:-50px 0 0 -100px; color:#fff; background:#000;}
+.chatroom a {display:inline-block; background:#000; color:#fff; padding:10px; margin:5px; text-decoration:none;} 
+
+</style>
+</head>
+<body>
+
+<!--
+<div id="aaa" style="z-index:1000; font-size:30px; position:absolute; top:0; left:0">aaa</div>
+<div id="bbb" style="z-index:1000; font-size:30px; position:absolute; top:100px; left:0">bbb</div>
+-->
+
+<div class="guide">
+	<div class="input-append">
+		<span style="display:block; padding-bottom:10px;">INPUT MOBILE channel</span>
+		<input class="span2" id="room-key" type="number" style="width:100%; padding:2px; font-size:22px;" />
+		<button id="connect" class="btn btn-primary" type="button"  style="width:100%; padding:5px; margin-top:10px;">CONNECT</button>
+	</div>
+</div>
+
+<div class="chatroom">
+	<a href="#" class="top">TOP</a>
+	<a href="#" class="bottom">BOTTOM</a>
+	<a href="#" class="left">LEFT</a>
+	<a href="#" class="right">RIGHT</a>
+</div>
+
+
+<script data-main="/js/mobile" src="/js/require.js"></script>
+
+</body>
+</html>
