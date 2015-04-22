@@ -1,0 +1,276 @@
+<!doctype html>
+<html>
+<head>
+<title>ROUND-ED</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="/css/common.css" />
+<link rel="stylesheet" type="text/css" href="/css/style.css" />
+<script src="/js/processing.js"></script>
+<script type="text/javascript">
+// Accessing JavaScript from Processing 
+function sendJSFromPS (msg) {
+	document.getElementById('msg').innerHTML = "fps: " + msg;
+};
+function getWindowSizeFromPS() {
+	if (!processingInstance) {
+		processingInstance = Processing.getInstanceById('processingID');
+	}
+	processingInstance.reSize(window.innerWidth, window.innerHeight);
+}
+// Accessing Processing from JavaScript
+var processingInstance;
+function sendPSFromJS() {
+	sendAccDataToProcessing(document.sendForm.ax.value, document.sendForm.ay.value);
+}
+function sendAccDataToProcessing(vx, vy) {
+	if (!processingInstance) {
+		processingInstance = Processing.getInstanceById('processingID');
+	}
+
+	var ax = parseFloat(vx);
+	var ay = parseFloat(vy);
+	
+	processingInstance.setAccData(ax, ay);
+}
+
+function resize_canvas() {
+	if (!processingInstance) {
+		processingInstance = Processing.getInstanceById('processingID');
+	}
+	processingInstance.reSize(window.innerWidth, window.innerHeight);
+}
+</script>
+</head>
+<body onresize="resize_canvas()">
+<a href="#" class="menuclose"><img src="/img/bn_close.png" alt="" /></a>
+<div class="menufilm"></div>
+<nav>
+	<a href="#about">about rounded</a><br />
+	<a href="#work">balanced work</a><br />
+	<!--<a href="#lab">instinct lab</a><br />-->
+	<a href="#contact">contact detail</a>
+</nav>
+<div class="menustart"><span></span><span></span><span></span><span></span></div>
+
+<h1>digital interactive group<br />rounded<span>balance instinct</span></h1>
+<h2 class="about-title">about<br />rounded</h2>
+
+<ul class="aboutnavi navigation">
+	<li><a href="#about">introduction</a></li>
+	<li><a href="#story">rounded story</a></li>
+</ul>
+
+<!-- introduction -->
+<div class="about" style="display:none">
+	<div class="a">
+		<h3>introduction<br /><span>rounded</span></h3>
+		<p>
+			Rounded is a group consisted of creative design and interactive coding directors.<br />
+			With surplus experience in design and coding, members of Rounded identify and<br />
+			reject any risks of a given project before-hand and carry each and every project to<br />
+			success.
+		</p>
+		<p>
+			With a trusting bond between Rounded and major advertising agencies as a base,<br />
+			Rounded makes better results through correct design consulting and thorough<br />
+			knowledge of the latest technologies.
+		</p>
+		<p>
+			The abundant experience and instinct of the directors of Rounded will be the priority<br />
+			of choosing Rounded as a accompnaying partner. The balance of creative design and<br />
+			technology will be a stable clockwork.
+		</p>
+	</div>
+	<div class="b">
+		<p class="c1">balanced instinctive<br />works</p>
+		<div>
+			<img src="/img/business_svg.png" alt="" />
+		</div>
+	</div>
+	<div class="c">
+		<h3>business domain<br />& service</h3>
+		<p class="m1">let us show you what Rounded can do<br />for your business.</p>
+		<div class="business clearfix">
+			<div class="a1">
+				<h4>ui design</h4>
+				<ul>
+					<li>brand promotion</li>
+					<li>creative concept making</li>
+					<li>contents design</li>
+					<li>GUI design</li>
+				</ul>			
+			</div>
+			<div class="a1">
+				<h4>ux interactive</h4>
+				<ul>
+					<li>digital installation</li>
+					<li>interactive advertising</li>
+					<li>offline promotion event</li>
+					<li>kiosk development</li>
+					<li>interactive sensing control</li>
+					<li>3D projection mapping</li>
+					<li>multi-touch table</li>
+					<li>interactive wall</li>
+				</ul>			
+			</div>
+			<div class="a1">
+				<h4>ui development</h4>
+				<ul>
+					<li>responsive website</li>
+					<li>flexible devices development</li>
+					<li>mobile app.</li>
+					<li>CMS development</li>
+					<li>facebook app.</li>
+					<li>social service related</li>
+				</ul>			
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- rounded story -->
+<div class="story" style="display:none">
+	<div class="a">
+		<h3>story of<br /><span>rounded</span></h3>
+		<p>
+			Growing in a unique and distinct galaxy, each and every director of Rounded experienced and<br />
+			acquired specific skill sets with instinct and intuition in their fields of work.<br />
+			Directors from each planet with unique skill sets started combining their skills equally to produce a<br />
+			new form of results never before seen in history.<br />
+			These attempts with unlimited possibilities lead the directors to make a group	called Rounded<br />
+			in planet Earth to stabalize their experiments.<br />
+			How the diverse experiments of Rounded will lead to powerful synergy effect and experiences to<br />
+			each directors is unpredictable to us also.
+		</p>
+	</div>
+	<div class="b">
+		<div>
+			<img src="/img/story_svg.png" alt="" />
+		</div>
+	</div>
+	<div class="c">
+		<h3><span>rounded</span><br />identity</h3>
+		<table class="notable" width="600">
+			<colgroup><col width="" /><col width="" /><col width="" /><col width="80" /></colgroup>
+			<tr>
+				<th>code</th>
+				<th>role</th>
+				<th>keyword</th>
+				<th>metaphor</th>
+			</tr>
+			<tr>
+				<td class="f"><img src="/img/txt_c2.png" alt="" /></td>
+				<td class="f t">creative<br />director</td>
+				<td class="f t">fire<br />passion<br />creative</td>
+				<td class="f"><img src="/img/meta_1.png" alt="" /></td>
+			</tr>
+			<tr>
+				<td><img src="/img/txt_x9.png" alt="" /></td>
+				<td class="t">digital<br />experience<br />director</td>
+				<td class="t">ice<br />insight<br />innovate</td>
+				<td><img src="/img/meta_2.png" alt="" /></td>
+			</tr>
+			<tr>
+				<td><img src="/img/txt_r4.png" alt="" /></td>
+				<td class="t">interactive<br />director</td>
+				<td class="t">water<br />flexibility<br />respond</td>
+				<td><img src="/img/meta_3.png" alt="" /></td>
+			</tr>
+			<tr>
+				<td><img src="/img/txt_f6.png" alt="" /></td>
+				<td class="t">front-end<br />director</td>
+				<td class="t">forest<br />precision<br />combine</td>
+				<td><img src="/img/meta_4.png" alt="" /></td>
+			</tr>
+			<tr>
+				<td><img src="/img/txt_d5.png" alt="" /></td>
+				<td class="t">back-end<br />director</td>
+				<td class="t">metal<br />stability<br />believe</td>
+				<td><img src="/img/meta_5.png" alt="" /></td>
+			</tr>
+		</table>
+	</div>
+</div>
+
+<!-- work detail -->
+<a href="#" class="work-close"></a>
+
+
+<h2 class="work-title">balanced<br />work</h2>
+<div class="work" style="display:none">
+	<ul class="work-list">
+		<li data-nth="1"><span>Subject ##1</span><div></div></li>
+		<li data-nth="2"><span>Subject ##2</span><div></div></li>
+		<li data-nth="3"><span>Subject ##3</span><div></div></li>
+		<li data-nth="4"><span>balanced work</span><div></div></li>
+		<li data-nth="5"><span>Subject ##5</span><div></div></li>
+		<li data-nth="6"><span>Subject ##6</span><div></div></li>
+		<li data-nth="7"><span>Subject ##7</span><div></div></li>
+		<li data-nth="8"><span>Subject ##8</span><div></div></li>
+		<li data-nth="9"><span>Subject ##9</span><div></div></li>
+		<li data-nth="10"><span>Subject ##10</span><div></div></li>
+		<li data-nth="11"><span>Subject ##11</span><div></div></li>
+		<li data-nth="12"><span>Subject ##12</span><div></div></li>
+		<li data-nth="13"><span>Subject ##13</span><div></div></li>
+		<li data-nth="14"><span>Subject ##14</span><div></div></li>
+		<li data-nth="15"><span>Subject ##15</span><div></div></li>
+		<li data-nth="16"><span>Subject ##16</span><div></div></li>
+	</ul>
+</div>
+
+<!-- contact detail -->
+<h2 class="contact-title">contact<br />detail</h2>
+
+<div class="contact" style="display:none">
+	<div class="a">
+		<h3 style="margin-bottom:40px">office<br />detail</h3>
+		<p>
+			phone &nbsp; +82 2 516 5726<br />
+			fax &nbsp; +82 31 516 5727<br />
+			email &nbsp; master@round-ed.com<br /><br />
+			4th floor, 48 Dosan-daero 28-gil Gangnam-gu Seoul, Korea
+		</p>
+		<a href="#">google map</a>
+	</div>
+
+	<div class="b">
+		<h3 style="margin-top:90px; margin-bottom:40px">business<br />inquiry</h3>
+		<p>
+			brian park  /  business manager<br />
+			email  brian@round-ed.com
+		</p>
+	</div>	
+</div>
+
+
+<div class="guide">
+	<p><strong>MOBILE connect</strong><br /><em id="url" style="font-size:11px; color:#6ed1ff"></em></p>
+	<p style="padding-top:20px;"><strong>Mobile channel</strong><br /><em id="roomKey" style="font-size:30px; color:#ffb96e"></em></p>
+</div>
+<div id="msg" style="position:absolute; z-index:-1;"></div>
+
+<div class="roundcolor"></div>
+
+<canvas id="processingID" data-processing-sources="/js/prototype4_2.pde">
+	<p>Your browser does not support the canvas tag.</p>
+</canvas>
+
+<footer>&copy;2014 rounded Co. Ltd.</footer>
+
+<div class="footer clearfix">
+	<p><strong>rounded</strong> balanced instinct</p>
+	<div><a href="#"><img src="/img/bn_facebook.png" alt="" /></a><a href="#"><img src="/img/bn_twitter.png" alt="" /></a><span>&copy;2014 rounded Co. Ltd.</span></div>
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script data-main="/js/main" src="/js/require.js"></script>
+</body>
+</html>
+
+<!--
+<ul id="messages"></ul>
+<form action="">
+  <input type="text" id="m" autocomplete="off" /><button>통신</button>
+</form>
+-->
+
