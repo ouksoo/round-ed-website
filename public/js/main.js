@@ -9,14 +9,14 @@ requirejs.config({
 	}
 });
 
-requirejs(['jquery','custom','Sammy','TweenMax','Wheel'], function($, custom, Sammy, TweenMax, Wheel){
+requirejs(['jquery','custom','sammy','TweenMax','Wheel'], function($, custom, sammy, TweenMax, Wheel){
 
 	//location.hash = 'main'; //initial hash
 
 	var roundLive = false;
 	var nowWork;
 
-	var app = Sammy(function(){
+	var app = sammy(function(){
 		this.get('#main', function(){
 
 			if(roundLive == true){
