@@ -7,7 +7,7 @@ var io = require('socket.io')(http);
 // all environments
 app.set('port', process.env.PORT || 8001);
 app.use(express.favicon());
-app.use(express.logger('dev'));
+app.use(express.logger('dev')); 
 app.use(express.json());
 app.use(express.bodyParser());
 app.use(express.methodOverride());
